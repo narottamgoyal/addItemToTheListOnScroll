@@ -1,0 +1,15 @@
+.list-style {
+  height: 8em;
+  overflow-y: auto;
+  font-size: xx-large;
+  width: 5em;
+  text-align: center;
+  margin: auto;
+  border: solid 2px #673AB7;
+}
+
+.list-item:hover {
+  background-color: #673AB7;
+  color: white;
+  cursor: pointer;
+}
