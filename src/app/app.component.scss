@@ -2,8 +2,9 @@
   height: 8em;
   overflow-y: auto;
   font-size: xx-large;
-  width: 5em;
-  text-align: center;
+  // width: 5em;
+  // text-align: center;
+  padding: 0 10px;
   margin: auto;
   border: solid 2px #673AB7;
 }
@@ -17,4 +18,9 @@
   background-color: #673AB7;
   color: white;
   cursor: pointer;
+}
+
+.container {
+  display: flex;
+  float: 1;
 }

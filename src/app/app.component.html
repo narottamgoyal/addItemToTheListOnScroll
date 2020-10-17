@@ -7,21 +7,70 @@
 <br />
 <br />
 
-<div class="filter">
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input
-      matInput
-      placeholder="Search number"
-      [(ngModel)]="numberFilterValue"
-    />
-  </mat-form-field>
-  <div class="list-style">
-    <div
-      class="list-item"
-      *ngFor="let item of clientList | customfilterPipe: numberFilterValue"
-    >
-      {{ item.no }}
+<div class="container">
+  <div class="filter">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        placeholder="Search number"
+        [(ngModel)]="numberFilterValue"
+      />
+    </mat-form-field>
+    <div class="list-style">
+      <div
+        class="list-item"
+        *ngFor="
+          let item of clientList
+            | customfilterPipe: numberFilterValue:numberFilter
+        "
+      >
+        {{ item.no }}
+      </div>
+    </div>
+  </div>
+
+  <div class="filter">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        placeholder="Search first name"
+        [(ngModel)]="firstNameFilterValue"
+      />
+    </mat-form-field>
+    <div class="list-style">
+      <div
+        class="list-item"
+        *ngFor="
+          let item of clientList
+            | customfilterPipe: firstNameFilterValue:firstNameFilter
+        "
+      >
+        {{ item.firstName }}
+      </div>
+    </div>
+  </div>
+
+  <div class="filter">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        placeholder="Search last name"
+        [(ngModel)]="lastNameFilterValue"
+      />
+    </mat-form-field>
+    <div class="list-style">
+      <div
+        class="list-item"
+        *ngFor="
+          let item of clientList
+            | customfilterPipe: lastNameFilterValue:lastNameFilter
+        "
+      >
+        {{ item.lastName }}
+      </div>
     </div>
   </div>
 </div>
