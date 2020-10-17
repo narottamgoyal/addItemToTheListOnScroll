@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
+import { Data } from './data';
 
 @Component({
   selector: 'app-root',
@@ -6,27 +7,6 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public clientList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-  private listFromServer = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
-    31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50
-    , 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70
-    , 71, 72, 73, 74, 75, 76, 77, 78, 79, 80];
-
-  @HostListener('scroll', ['$event'])
-  public onScroll(event: any) {
-    // visible height + pixel scrolled >= total height
-    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
-      this.addMoreItems(10);
-    }
-  }
-
-  private addMoreItems(addNewItemCount: number) {
-    const currentItemCount = this.clientList.length;
-    if (currentItemCount === this.listFromServer.length) { return; }
-    alert('Adding new items to the list');
-    const temp = this.listFromServer.slice(currentItemCount, currentItemCount + addNewItemCount);
-    this.clientList = [...this.clientList, ...temp];
-  }
+  public numberFilterValue: any;
+  public clientList = Data.peopeList;
 }

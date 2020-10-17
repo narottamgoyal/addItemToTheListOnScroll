@@ -6,6 +6,22 @@
 <br />
 <br />
 <br />
-<div class="list-style" (scroll)="onScroll($event)">
-  <div class="list-item" *ngFor="let item of clientList">{{ item }}</div>
+
+<div class="filter">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      placeholder="Search number"
+      [(ngModel)]="numberFilterValue"
+    />
+  </mat-form-field>
+  <div class="list-style">
+    <div
+      class="list-item"
+      *ngFor="let item of clientList | customfilterPipe: numberFilterValue"
+    >
+      {{ item.no }}
+    </div>
+  </div>
 </div>
