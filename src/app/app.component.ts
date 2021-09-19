@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Data } from './data';
-
+import { Data } from './Data';
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

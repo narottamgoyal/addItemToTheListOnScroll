@@ -22,7 +22,7 @@
         class="list-item"
         *ngFor="
           let item of clientList
-            | customfilterPipe: numberFilterValue:numberFilter
+            | customFilter: numberFilterValue:numberFilter
         "
       >
         {{ item.no }}
@@ -44,7 +44,7 @@
         class="list-item"
         *ngFor="
           let item of clientList
-            | customfilterPipe: firstNameFilterValue:firstNameFilter
+            | customFilter: firstNameFilterValue:firstNameFilter
         "
       >
         {{ item.firstName }}
@@ -66,7 +66,7 @@
         class="list-item"
         *ngFor="
           let item of clientList
-            | customfilterPipe: lastNameFilterValue:lastNameFilter
+            | customFilter: lastNameFilterValue:lastNameFilter
         "
       >
         {{ item.lastName }}
