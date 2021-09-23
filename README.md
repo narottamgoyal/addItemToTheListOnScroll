@@ -6,6 +6,12 @@
 npm install --save-dev electron@latest
 ```
 
+## Install asar
+
+```
+npm install asar --save
+```
+
 ## Electron commands for _package.json_
 
 ### Run/Start electron in debug mode
