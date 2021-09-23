@@ -18,7 +18,7 @@ function createWindow() {
 
   // and load the index.html of the app.
   //if (debug)
-  mainWindow.loadURL(`file://${__dirname}/dist/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/dist/electron-app-demo/index.html`)
   //else
   //mainWindow.loadURL(`file://${__dirname}/index.html`)
   // mainWindow.loadURL(

@@ -1,33 +1,35 @@
 # ElectronAppDemo
 
-## install electron
+## Install electron
 
 ```
 npm install --save-dev electron@latest
 ```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+## Electron commands for _package.json_
 
-## Development server
+### Run/Start electron in debug mode
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+"start:electron": "ng build --base-href ./ && electron ."
+```
 
-## Code scaffolding
+### Create electron package
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+"winpackage": "electron-packager . DemoApp --platform=win32 --arch=x64 --overwrite --app-version=1.0.0 --build-version=1.0.0 --win32metadata.ProductName=DemoApp --FileDescription=DemoApp --appname=demoapp --win32metadata.CompanyName=ng --app-copyright=ng --icon=eagle.ico"
+```
 
-## Build
+### archive electron created package using _asar_
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+"archiveapp": "asar pack DemoApp-win32-x64/resources/app DemoApp-win32-x64/resources/app.asar"
+```
 
-## Running unit tests
+References:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- https://github.com/electron/electron-packager
 
-## Running end-to-end tests
+- https://www.electronjs.org/docs/latest/tutorial/quick-start
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- https://icon-icons.com/icon/eagle/98734
